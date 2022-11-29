@@ -4,7 +4,8 @@ from rest_framework.pagination import LimitOffsetPagination
 from rest_framework import filters
 from posts.models import Group, Post, Follow
 from .permissions import OwnerOrReadOnly, ReadOnly
-from .serializers import CommentSerializer, GroupSerializer, PostSerializer, FollowSerializer
+from .serializers import CommentSerializer, GroupSerializer, \
+    PostSerializer, FollowSerializer
 
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -61,4 +62,3 @@ class FollowViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
-
