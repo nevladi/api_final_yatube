@@ -61,4 +61,4 @@ class Follow(models.Model):
         ]
 
     def __str__(self):
-        return f'{self.user} gjlgbcfy yf {self.following}'
+        return f'{self.user} {self.following}'
